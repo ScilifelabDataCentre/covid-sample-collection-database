@@ -14,4 +14,6 @@ contact: c19dp:contact:SE_1398
 contact_priority: 1
 collections:
 email: agneta.lindberg@regionjh.se
+aliases:
+    /menu/main/app-scd/biobank/c19dp:biobank:SE_1398
 ---

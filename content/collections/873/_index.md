@@ -14,4 +14,6 @@ contact: c19dp:contact:SE_1873
 contact_priority: 1
 collections:
 email: katarina.jarlestedt@regiondalarna.se
+aliases:
+    /menu/main/app-scd/biobank/c19dp:biobank:SE_1873
 ---
