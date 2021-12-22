@@ -102,7 +102,7 @@
               </tr>
             </thead>
             <tbody>
-              {{ range .Site.RegularPages }}
+              {{ range sort .Site.RegularPages ".Parent.Params.name" "asc" }}
               <tr>
                 <td><small><b>{{ .Parent.Params.name }}:</b></small><br><h5><a href="{{ .RelPermalink }}">{{ .Params.name }}</a></h5></td>
                 <td><span class="m-1 badge badge-secondary">{{ .Params.collection_category }}</span></td>
