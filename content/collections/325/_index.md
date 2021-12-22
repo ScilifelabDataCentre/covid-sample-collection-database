@@ -14,4 +14,6 @@ contact: c19dp:contact:SE_1325
 contact_priority: 1
 collections:
 email: tomas.seidal@regionhalland.se
+aliases:
+    /menu/main/app-scd/biobank/c19dp:biobank:SE_1325
 ---

@@ -14,4 +14,6 @@ contact: c19dp:contact:SE_1472
 contact_priority: 1
 collections:
 email: johanna.h.akerlund@regionvasterbotten.se
+aliases:
+    /menu/main/app-scd/biobank/c19dp:biobank:SE_1472
 ---

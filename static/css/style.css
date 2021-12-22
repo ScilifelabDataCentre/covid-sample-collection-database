@@ -1,0 +1,4 @@
+.card .fa-caret-right { display: none; }
+.card .fa-caret-down { display: inline; }
+.card .collapsed .fa-caret-right { display: inline; }
+.card .collapsed .fa-caret-down { display: none; }

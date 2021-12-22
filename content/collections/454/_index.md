@@ -14,4 +14,6 @@ contact: c19dp:contact:SE_1454
 contact_priority: 1
 collections:
 email: karin.johansson11@regionorebrolan.se
+aliases:
+    /menu/main/app-scd/biobank/c19dp:biobank:SE_1454
 ---

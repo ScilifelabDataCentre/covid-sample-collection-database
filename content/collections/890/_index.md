@@ -14,4 +14,6 @@ contact: c19dp:contact:SE_1890
 contact_priority: 1
 collections:
 email: rbcvast@vgregion.se
+aliases:
+    /menu/main/app-scd/biobank/c19dp:biobank:SE_1890
 ---

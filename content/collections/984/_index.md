@@ -14,4 +14,6 @@ contact: c19dp:contact:SE_1984
 contact_priority: 1
 collections:
 email: biobank@regiongavleborg.se
+aliases:
+    /menu/main/app-scd/biobank/c19dp:biobank:SE_1984
 ---

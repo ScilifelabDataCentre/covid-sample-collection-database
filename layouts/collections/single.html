@@ -162,12 +162,14 @@
             <div class="col pl-0">{{ if eq $info_about_minors "true" }}yes{{ else if eq $info_about_minors "false" }}no{{ end }}</div>
           </div> {{ end }}
           {{ if .Params.inclusion_criteria }}<div class="row ml-0">
-              <div class="col-auto pl-0 font-weight-bold">Inclusion criteria:</div>
-              <div class="col pl-0">{{ .Params.inclusion_criteria }}</div>
+            <div class="mb-3">
+              <b>Inclusion criteria:</b> {{ .Params.inclusion_criteria }}
+            </div>
             </div>{{ end }}
           {{ if .Params.exclusion_criteria }}<div class="row ml-0">
-              <div class="col-auto pl-0 font-weight-bold">Exclusion criteria:</div>
-              <div class="col pl-0">{{ .Params.exclusion_criteria }}</div>
+            <div class="mb-3">
+              <b>Exclusion criteria:</b> {{ .Params.exclusion_criteria }}
+            </div>
             </div>{{ end }}
           <div class="row ml-0 mt-3">
             <h4>Sample information</h4>
