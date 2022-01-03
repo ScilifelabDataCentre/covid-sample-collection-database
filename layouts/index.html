@@ -1,16 +1,16 @@
 {{ define "main" }}
 
 <div class="row">
-  <div class="col-md-3 text-muted">
-    <div class="alert alert-info small" role="alert">
-      <i class="fas fa-exclamation-circle"></i> Search function is temporarily disabled. We are working to enable it again as soon as possible.
-    </div>
+  <div class="col-md-3 form-check">
+
+    <div><h6>Filtering tools</h6></div>
+
     <div class="card">
         <div data-toggle="collapse" data-target="#collapseName" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseName" id="headingName"><span aria-hidden="true" class="fa fa-caret-right mr-2"></span><span aria-hidden="true" class="fa fa-caret-down mr-2"></span> Name </div>
         <div id="collapseName" class="collapse" aria-labelledby="headingName">
         <div class="card-body">
-          <fieldset disabled><input type="search" class="form-control form-control-sm" placeholder="" aria-controls=""></fieldset>
-            <small class="form-text text-muted">Start typing to filter the collections displayed</small>
+          <fieldset><input type="text" class="form-control form-control-sm" placeholder="" aria-controls="" id="nameField"></fieldset>
+            <small class="form-text text-muted">Start typing to filter by collection name or biobank name</small>
         </div>
       </div>
     </div>
@@ -19,8 +19,8 @@
         <div data-toggle="collapse" data-target="#collapseDiagnoses" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseDiagnoses" id="headingDiagnoses"><span aria-hidden="true" class="fa fa-caret-right mr-2"></span><span aria-hidden="true" class="fa fa-caret-down mr-2"></span> Diagnoses </div>
         <div id="collapseDiagnoses" class="collapse" aria-labelledby="headingDiagnoses">
         <div class="card-body">
-            <div class="custom-control custom-checkbox"><input type="checkbox" name="diagnoses" autocomplete="off" class="custom-control-input" value="u071"><label class="custom-control-label">Laboratory-confirmed COVID-19 diagnosis; U07.1</label></div>
-            <div class="custom-control custom-checkbox"><input type="checkbox" name="diagnoses" autocomplete="off" class="custom-control-input" value="u072"><label class="custom-control-label">Suspect or probable COVID-19 diagnosis; U07.2</label></div>
+            <div class="custom-control"><input type="checkbox" name="diagnoses" class="form-check-input" value="Laboratory-confirmed COVID-19 diagnosis; U07.1">Laboratory-confirmed COVID-19 diagnosis; U07.1</div>
+            <div class="custom-control"><input type="checkbox" name="diagnoses" class="form-check-input" value="Suspect or probable COVID-19 diagnosis; U07.2">Suspect or probable COVID-19 diagnosis; U07.2</div>
         </div>
       </div>
     </div>
@@ -29,28 +29,28 @@
           <div data-toggle="collapse" data-target="#collapseMaterials" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseMaterials" id="headingMaterials"><span aria-hidden="true" class="fa fa-caret-right mr-2"></span><span aria-hidden="true" class="fa fa-caret-down mr-2"></span> Materials </div>
           <div id="collapseMaterials" class="collapse" aria-labelledby="headingMaterials">
           <div class="card-body">
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="BUFFY_COAT"><label class="custom-control-label">Buffy Coat</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="CDNA"><label class="custom-control-label">cDNA / mRNA</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="CELL_LINES"><label class="custom-control-label">Cell lines</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="CSF"><label class="custom-control-label">Cerebrospinal fluid</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="DNA"><label class="custom-control-label">DNA</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="FECES"><label class="custom-control-label">Feces</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="MICRO_RNA"><label class="custom-control-label">microRNA</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="NASAL_SWAB"><label class="custom-control-label">Nasal swab</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="OTHER"><label class="custom-control-label">Other</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="PATHOGEN"><label class="custom-control-label">Pathogen</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="PBMC"><label class="custom-control-label">PBMC</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="PERIPHERAL_BLOOD_CELLS"><label class="custom-control-label">Peripheral blood cells</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="PLASMA"><label class="custom-control-label">Plasma</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="RNA"><label class="custom-control-label">RNA</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="SALIVA"><label class="custom-control-label">Saliva</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="SERUM"><label class="custom-control-label">Serum</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="THROAT_SWAB"><label class="custom-control-label">Throat swab</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="TISSUE_FROZEN"><label class="custom-control-label">Tissue (frozen)</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="TISSUE_PARAFFIN_EMBEDDED"><label class="custom-control-label">Tissue (paraffin preserved)</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="TISSUE_STAINED"><label class="custom-control-label">Tissue (stained sections/slides)</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="URINE"><label class="custom-control-label">Urine</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="materials" autocomplete="off" class="custom-control-input" value="WHOLE_BLOOD"><label class="custom-control-label">Whole Blood</label></div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Buffy Coat">Buffy Coat</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="cDNA / mRNA">cDNA / mRNA</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Cell lines">Cell lines</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Cerebrospinal fluid">Cerebrospinal fluid</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="DNA">DNA</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Feces">Feces</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="microRNA">microRNA</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Nasal swab">Nasal swab</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Other">Other</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Pathogen">Pathogen</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="PBMC">PBMC</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Peripheral blood cells">Peripheral blood cells</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Plasma">Plasma</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="RNA">RNA</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Saliva">Saliva</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Serum">Serum</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Throat swab">Throat swab</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Tissue (frozen)">Tissue (frozen)</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Tissue (paraffin preserved)">Tissue (paraffin preserved)</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Tissue (stained sections/slides)">Tissue (stained sections/slides)</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Urine">Urine</div>
+              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Whole Blood">Whole Blood</div>
           </div>
         </div>
       </div>
@@ -59,35 +59,36 @@
           <div data-toggle="collapse" data-target="#collapseCollectionTypes" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseCollectionTypes" id="headingCollectionTypes"><span aria-hidden="true" class="fa fa-caret-right mr-2"></span><span aria-hidden="true" class="fa fa-caret-down mr-2"></span> Collection types </div>
           <div id="collapseCollectionTypes" class="collapse" aria-labelledby="headingCollectionTypes">
           <div class="card-body">
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="collectiontypes" autocomplete="off" class="custom-control-input" value="healthcare"><label class="custom-control-label">Healthcare sample collection</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="collectiontypes" autocomplete="off" class="custom-control-input" value="research"><label class="custom-control-label">Research sample collection</label></div>
+              <div class="custom-control"><input type="checkbox" name="collectiontypes" class="form-check-input" value="Healthcare sample collection">Healthcare sample collection</div>
+              <div class="custom-control"><input type="checkbox" name="collectiontypes" class="form-check-input" value="Research sample collection">Research sample collection</div>
           </div>
         </div>
       </div>
 
-      <div class="card">
+      <!-- <div class="card">
           <div data-toggle="collapse" data-target="#collapseDataTypes" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseDataTypes" id="headingDataTypes"><span aria-hidden="true" class="fa fa-caret-right mr-2"></span><span aria-hidden="true" class="fa fa-caret-down mr-2"></span> Data types </div>
           <div id="collapseDataTypes" class="collapse" aria-labelledby="headingDataTypes">
           <div class="card-body">
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="datatypes" autocomplete="off" class="custom-control-input" value="biologicalsamples"><label class="custom-control-label">Biological samples</label></div>
-              <div class="custom-control custom-checkbox"><input type="checkbox" name="datatypes" autocomplete="off" class="custom-control-input" value="medicalrecords"><label class="custom-control-label">Medical records</label></div>
+              <div class="custom-control"><input type="checkbox" name="datatypes" class="form-check-input" value="Biological samples">Biological samples</div>
+              <div class="custom-control"><input type="checkbox" name="datatypes" class="form-check-input" value="Medical records">Medical records</div>
           </div>
         </div>
-      </div>
+      </div> -->
 
-  </div>
+      <div class="mt-4"><h6>Database info</h6></div>
 
-  <div class="col-md-9">
-    <div class="row mb-2">
-      <div class="col-md-12 mt-3 mt-md-0">
+      <div class="card pl-2">
         {{ $collections := where .Site.RegularPages "Section" "collections" }}
         {{ $len_collections := len $collections }}
         {{ $biobanks_and_collections := where .Site.Pages "Section" "collections" }}
         {{ $len_biobanks := sub (sub (len $biobanks_and_collections) 1) $len_collections }}
-        <em>{{ $len_biobanks }} biobanks with {{ $len_collections }} collections matching the search criteria</em>
-      </div>
-    </div>
+        <div class="row"><div class="col">Biobanks: {{ $len_biobanks }}</div></div>
+        <div class="row"><div class="col">Collections: {{ $len_collections }}</div></div>
+        </div>
 
+  </div>
+
+  <div class="col-md-9 mt-4 mt-md-0">
     <div class="row">
       <div class="col-md-12">
         <div class="d-md-none alert alert-info small">Scroll the table sideways to view all columns.</div>
@@ -99,6 +100,7 @@
                 <th scope="col">Type</th>
                 <th scope="col">Size</th>
                 <th scope="col">Materials</th>
+                <th scope="col">Diagnoses</th>
               </tr>
             </thead>
             <tbody>
@@ -125,9 +127,17 @@
                               {{ else if eq .Params.order_of_magnitude 8 }}
                               100.000.000 - 1.000.000.000
                               {{ end }}</span></td>
-                <td><span class="m-1 badge badge-danger">{{ range .Params.materials }}</span>
-                  <span class="m-1 badge badge-danger">{{ . }}</span>
+                <td><span class="m-1 badge badge-danger">{{ range (.GetTerms "materials") }}</span>
+                    <span class="m-1 badge badge-danger taxonomy-term"><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></span>
                   {{ end }}</td>
+                <td>{{ if .Params.diagnosis_available }}{{ range .Params.diagnosis_available}}
+                  {{ if eq . "urn:miriam:icd:U07.1" }}
+                  <span class="m-1 badge badge-primary">Laboratory-confirmed COVID-19 diagnosis; U07.1</span>
+                  {{ end }}
+                  {{ if eq . "urn:miriam:icd:U07.2" }}
+                  <span class="m-1 badge badge-primary">Suspect or probable COVID-19 diagnosis; U07.2</span>
+                  {{ end }}
+                {{ end }}{{ end }}</td>
               </tr>
               {{ end }}
             </tbody>
@@ -137,5 +147,67 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function () {
+    var table = $('table.table').DataTable({
+      "sDom": '<"top row"<"col-md"i>>rt<"bottom row"<"col-md"l><"col-md"p>><"clear">',
+      "columnDefs": [{ "orderable": false, "targets": [2, 3] },
+      {"targets": [4],  "visible": false}],
+        "language": {
+    "lengthMenu": "Show _MENU_ collections per page",
+    "zeroRecords": "Nothing found.",
+    "info": "Showing _START_ to _END_ of _TOTAL_ collections",
+    "infoEmpty": "No collections found",
+    "infoFiltered": "(filtered from _MAX_ collections in total)",
+    "search": "Search:",
+    "paginate": {
+      "first": "First",
+      "last": "Last",
+      "next": "»",
+      "previous": "«"
+    }
+  }
+    }
+
+  );
+
+  // Search field filter
+  $('#nameField').on('keyup', function () {
+    table.column(0).search( this.value ).draw();
+  } )
+
+  // Checkbox filters
+
+  $('input:checkbox').on('change', function () {
+    // Type filter
+    var collectiontypes = $('input:checkbox[name="collectiontypes"]:checked').map(function () {
+      return this.value;
+    }).get().join('|');
+
+    table.column(1).search(collectiontypes, false, true, true).draw(false);
+
+    // Materials filter
+    var materials = $('input:checkbox[name="materials"]:checked').map(function () {
+      return this.value;
+    }).get().join('|');
+
+    table.column(3).search(materials, false, true, true).draw(false);
+
+    // Diagnoses filter
+    var diagnoses = $('input:checkbox[name="diagnoses"]:checked').map(function () {
+      return this.value;
+    }).get().join('|');
+
+    table.column(4).search(diagnoses, false, true, true).draw(false);
+
+  });
+
+} );
+</script>
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8"
+  src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
 
 {{ end }}

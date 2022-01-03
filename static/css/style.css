@@ -2,3 +2,8 @@
 .card .fa-caret-down { display: inline; }
 .card .collapsed .fa-caret-right { display: inline; }
 .card .collapsed .fa-caret-down { display: none; }
+
+.taxonomy-term a {
+  color: white;
+  text-decoration: none;
+}
