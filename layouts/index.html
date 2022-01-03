@@ -125,8 +125,8 @@
                               {{ else if eq .Params.order_of_magnitude 8 }}
                               100.000.000 - 1.000.000.000
                               {{ end }}</span></td>
-                <td><span class="m-1 badge badge-danger">{{ range .Params.materials }}</span>
-                  <span class="m-1 badge badge-danger">{{ . }}</span>
+                <td><span class="m-1 badge badge-danger">{{ range (.GetTerms "materials") }}</span>
+                    <span class="m-1 badge badge-danger taxonomy-term"><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></span>
                   {{ end }}</td>
               </tr>
               {{ end }}
