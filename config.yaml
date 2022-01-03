@@ -8,3 +8,5 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+taxonomies:
+  material: materials
