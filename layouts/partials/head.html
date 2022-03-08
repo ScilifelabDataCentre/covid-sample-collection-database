@@ -24,8 +24,15 @@
   <!-- Additional local CSS -->
   <link rel="stylesheet" href="/css/style.css">
 
+  {{ if .IsHome }}
   <!-- DataTables -->
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+
+  <!-- requirements for DataTables rowGroup, for grouping rows -->
+  <script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script>
+  <script src="https://cdn.datatables.net/rowgroup/1.0.2/js/dataTables.rowGroup.min.js"></script>
+  <!-- <link href="https://cdn.datatables.net/rowgroup/1.0.2/css/rowGroup.dataTables.min.css" rel="stylesheet" type="text/css" /> -->
+  {{ end }}
 
 </head>
