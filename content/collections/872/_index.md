@@ -7,7 +7,7 @@ country: SE
 biobank_sverige: TRUE
 ivo_regnum: 872
 bbmri_id:
-website_url: https://biobanksverige.se/kont/landstingregioner/sormland/
+website_url: https://biobanksverige.se/kontakta-oss/biobankssamordnare-och-nej-talonger/
 description:
 address:
 contact: c19dp:contact:SE_1872

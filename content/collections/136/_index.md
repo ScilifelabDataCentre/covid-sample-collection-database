@@ -7,7 +7,7 @@ country: SE
 biobank_sverige: TRUE
 ivo_regnum: 136
 bbmri_id:
-website_url: https://biobanksverige.se/kont/landstingregioner/region-skane/
+website_url: hhttps://biobanksverige.se/kontakta-oss/biobankssamordnare-och-nej-talonger/
 description: Regionalt biobankscentrum, Södra sjukvårdsregionen
 address:
 contact: c19dp:contact:SE_1136
