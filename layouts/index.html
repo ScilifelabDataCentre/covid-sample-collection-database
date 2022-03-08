@@ -93,9 +93,10 @@
       <div class="col-md-12">
         <div class="d-md-none alert alert-info small">Scroll the table sideways to view all columns.</div>
         <div class="table-responsive">
-          <table class="table table-hover" width="100%">
+          <table id="collections" class="table table-hover" width="100%">
             <thead class="thead-light">
               <tr>
+                <th scope="col">Biobank</th>
                 <th scope="col">Name</th>
                 <th scope="col">Type</th>
                 <th scope="col">Size</th>
@@ -106,7 +107,8 @@
             <tbody>
               {{ range sort .Site.RegularPages ".Parent.Params.name" "asc" }}
               <tr>
-                <td><small><b>{{ .Parent.Params.name }}:</b></small><br><h5><a href="{{ .RelPermalink }}">{{ .Params.name }}</a></h5></td>
+                <td>{{ .Parent.Params.acronym }}</td>
+                <td><h6><a href="{{ .RelPermalink }}">{{ .Params.name }}</a></h6></td>
                 <td><span class="m-1 badge badge-secondary">{{ .Params.collection_category }}</span></td>
                 <td><span class="m-1 badge badge-success">{{ if eq .Params.order_of_magnitude 0 }}
                               &#60;10
@@ -150,31 +152,69 @@
 
 <script>
   $(document).ready(function () {
-    var table = $('table.table').DataTable({
+    var collapsedGroups = {};
+    var top = '';
+
+    var table = $('#collections').DataTable({
       "sDom": '<"top row"<"col-md"i>>rt<"bottom row"<"col-md"l><"col-md"p>><"clear">',
       "columnDefs": [{ "orderable": false, "targets": [2, 3] },
-      {"targets": [4],  "visible": false}],
-        "language": {
-    "lengthMenu": "Show _MENU_ collections per page",
-    "zeroRecords": "Nothing found.",
-    "info": "Showing _START_ to _END_ of _TOTAL_ collections",
-    "infoEmpty": "No collections found",
-    "infoFiltered": "(filtered from _MAX_ collections in total)",
-    "search": "Search:",
-    "paginate": {
-      "first": "First",
-      "last": "Last",
-      "next": "»",
-      "previous": "«"
-    }
-  }
-    }
+        {"targets": [0,5],  "visible": false}],
+      "language": {
+      "lengthMenu": "Show _MENU_ collections per page",
+      "zeroRecords": "Nothing found.",
+      "info": "Showing _START_ to _END_ of _TOTAL_ collections",
+      "infoEmpty": "No collections found",
+      "infoFiltered": "(filtered from _MAX_ collections in total)",
+      "search": "Search:",
+      "paginate": {
+        "first": "First",
+        "last": "Last",
+        "next": "»",
+        "previous": "«"
+        }
+      },
+      rowGroup: {
+          dataSrc: [0],
+          startRender: function(rows, group, level) {
+              var all;
 
-  );
+              if (level === 0) {
+                  top = group;
+                  all = group;
+              } else {
+                  // if parent collapsed, nothing to do
+                  if (!!collapsedGroups[top]) {
+                      return;
+                  }
+                  all = top + group;
+              }
+
+              var collapsed = !!collapsedGroups[all];
+
+              rows.nodes().each(function(r) {
+                  r.style.display = collapsed ? 'none' : '';
+              });
+
+              // Add category name to the <tr>. NOTE: Hardcoded colspan
+              return $('<tr/>')
+                  .append('<td colspan="6"><span aria-hidden="true" class="fa fa-caret-right mr-2"></span><span aria-hidden="true" class="fa fa-caret-down mr-2"></span> ' + group + ' (' + rows.count() + '):</td>')
+                  .attr('data-name', all)
+                  .toggleClass('collapsed', collapsed);
+          }
+      }
+
+      }
+      );
+
+    $('#collections tbody').on('click', 'tr.group-start', function () {
+         var name = $(this).data('name');
+         collapsedGroups[name] = !collapsedGroups[name];
+         table.draw(false);
+     });
 
   // Search field filter
   $('#nameField').on('keyup', function () {
-    table.column(0).search( this.value ).draw();
+    table.column(1).search( this.value ).draw();
   } )
 
   // Checkbox filters
@@ -185,28 +225,27 @@
       return this.value;
     }).get().join('|');
 
-    table.column(1).search(collectiontypes, false, true, true).draw(false);
+    table.column(2).search(collectiontypes, false, true, true).draw(false);
 
     // Materials filter
     var materials = $('input:checkbox[name="materials"]:checked').map(function () {
       return this.value;
     }).get().join('|');
 
-    table.column(3).search(materials, false, true, true).draw(false);
+    table.column(4).search(materials, false, true, true).draw(false);
 
     // Diagnoses filter
     var diagnoses = $('input:checkbox[name="diagnoses"]:checked').map(function () {
       return this.value;
     }).get().join('|');
 
-    table.column(4).search(diagnoses, false, true, true).draw(false);
+    table.column(5).search(diagnoses, false, true, true).draw(false);
 
   });
 
 } );
 </script>
 
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 <script type="text/javascript" charset="utf8"
   src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
 

@@ -7,7 +7,7 @@ country: SE
 biobank_sverige: TRUE
 ivo_regnum: 890
 bbmri_id:
-website_url: https://biobanksverige.se/kont/landstingregioner/vastra-gotaland/
+website_url: https://biobanksverige.se/kontakta-oss/biobankssamordnare-och-nej-talonger/
 description: Biobank Väst
 address:
 contact: c19dp:contact:SE_1890
