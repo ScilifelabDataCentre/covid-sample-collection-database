@@ -21,23 +21,8 @@
   </div>
 </div>
 
-<div class="alert text-center cookiealert" role="alert">
-  We use cookies to improve your experience of the website. By continuing you accept that we use cookies. More information: <a href="https://covid19dataportal.se/privacy/#cookies">About cookies</a>.
-  <button type="button" class="btn btn-primary acceptcookies">
-      I understand
-  </button>
-</div>
-
 </div>
 </footer>
-
-<!-- Cookies alert -->
-<div class="alert text-center cookiealert" role="alert">
-We use cookies to improve your experience of the website. By continuing you accept that we use cookies. More information: <a href="/privacy/#cookies">About cookies</a>.
-    <button type="button" class="btn btn-primary acceptcookies">
-        I understand
-    </button>
-</div>
 
 <!-- Bootstrap-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -46,15 +31,20 @@ We use cookies to improve your experience of the website. By continuing you acce
 <!-- FontAwesome -->
 <script src="https://kit.fontawesome.com/471b59d3f8.js" crossorigin="anonymous"></script>
 
-<!-- JS code for the cookie alert-->
-<script src="/cookiealert.js"></script>
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7ERWTL7ESR"></script>
+<!-- Analytics -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7ERWTL7ESR');
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.covid19dataportal.se"]);
+  _paq.push(["disableCookies"]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//matomo.dckube.scilifelab.se/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
 </script>
