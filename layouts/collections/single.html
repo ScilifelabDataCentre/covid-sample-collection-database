@@ -190,15 +190,15 @@
                 <h5>Collection contact information</h5>
                 {{ if .Params.head_firstname }}<div class="row"><div class="col">Collection head: {{ .Params.head_firstname }} {{ .Params.head_lastname }} {{ if .Params.head_role }}({{ .Params.head_role }}){{ end }}</div></div>{{ end }}
                 <div class="row"><div class="col">Contact person: {{ .Params.collection_contact.first_name }} {{ .Params.collection_contact.last_name }}</div></div>
-                <div class="row"><div class="col"><span aria-hidden="true" class="fa fa-fw fa-envelope mr-2"></span><span>{{ .Params.collection_contact.email }} </span></div></div>
-                {{ if .Params.website_url }}<div class="row"><div class="col"><span aria-hidden="true" class="fa fa-fw fa-globe mr-2"></span><a href="{{ .Params.website_url }}" target="_blank"><span>Collection homepage</span></a></div></div>{{ end }}
+                <div class="row"><div class="col"><i class="bi bi-envelope-fill mr-2"></i><span>{{ .Params.collection_contact.email }} </span></div></div>
+                {{ if .Params.website_url }}<div class="row"><div class="col"><i class="bi bi-globe mr-2"></i><a href="{{ .Params.website_url }}" target="_blank"><span>Collection homepage</span></a></div></div>{{ end }}
                 {{ end }}
                 <h5>Biobank contact information</h5>
                 <div class="row"><div class="col">{{ .Parent.Params.name }}</div></div>
                 {{ if .Parent.Params.ivo_regnum }}<div class="row"><div class="col">Registration number at IVO: {{ .Parent.Params.ivo_regnum }}</div></div>{{ end }}
-                {{ if .Parent.Params.email }}<div class="row"><div class="col"><span aria-hidden="true" class="fa fa-fw fa-envelope mr-2"></span><span>{{ .Parent.Params.email }}</span></div></div>{{ end }}
-                {{ if .Parent.Params.website_url }}<div class="row"><div class="col"><span aria-hidden="true" class="fa fa-fw fa-globe mr-2"></span><a href="{{ .Parent.Params.website_url }}" target="_blank"><span>Biobank homepage</span></a></div></div>{{ end }}
-                <div class="row mt-2"><div class="col"><a href="{{ .Parent.RelPermalink }}" class=""><span>All collections of {{ .Parent.Params.name }}</span> <span aria-hidden="true" class="fa fa-fw fa-arrow-circle-right"></span></a></div></div>
+                {{ if .Parent.Params.email }}<div class="row"><div class="col"><i class="bi bi-envelope-fill mr-2"></i>{{ .Parent.Params.email }}</div></div>{{ end }}
+                {{ if .Parent.Params.website_url }}<div class="row"><div class="col"><i class="bi bi-globe mr-2"></i><a href="{{ .Parent.Params.website_url }}" target="_blank"><span>Biobank homepage</span></a></div></div>{{ end }}
+                <div class="row mt-2"><div class="col"><a href="{{ .Parent.RelPermalink }}" class=""><span>All collections of {{ .Parent.Params.name }}</span> <i class="bi bi-arrow-right-circle-fill"></i></a></div></div>
                 </div>
               </div>
             </div>
