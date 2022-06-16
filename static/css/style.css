@@ -15,8 +15,14 @@
   background-color: rgba(233, 235, 238, 0.6);
 }
 
-.group .fa-caret-right { display: none; }
-.group .fa-caret-down { display: inline; }
+.group .bi-caret-right-fill { display: none; }
+.group .bi-caret-down-fill { display: inline; }
 
-.group.collapsed .fa-caret-right { display: inline; }
-.group.collapsed .fa-caret-down { display: none; }
+.group.collapsed .bi-caret-right-fill { display: inline; }
+.group.collapsed .bi-caret-down-fill { display: none; }
+
+.filters .bi-caret-right-fill { display: none; }
+.filters .bi-caret-down-fill { display: inline; }
+
+.filters .collapsed .bi-caret-right-fill { display: inline; }
+.filters .collapsed .bi-caret-down-fill { display: none; }

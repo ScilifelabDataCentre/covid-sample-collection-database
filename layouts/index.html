@@ -3,10 +3,11 @@
 <div class="row">
   <div class="col-md-3 form-check">
 
+    <div class="filters">
     <div><h6>Filtering tools</h6></div>
 
     <div class="card">
-        <div data-toggle="collapse" data-target="#collapseName" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseName" id="headingName"><span aria-hidden="true" class="fa fa-caret-right mr-2"></span><span aria-hidden="true" class="fa fa-caret-down mr-2"></span> Name </div>
+        <div data-toggle="collapse" data-target="#collapseName" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseName" id="headingName"><span aria-hidden="true" class="bi bi-caret-right-fill mr-2"></span><span aria-hidden="true" class="bi bi-caret-down-fill mr-2"></span> Name </div>
         <div id="collapseName" class="collapse" aria-labelledby="headingName">
         <div class="card-body">
           <fieldset><input type="text" class="form-control form-control-sm" placeholder="" aria-controls="" id="nameField"></fieldset>
@@ -16,7 +17,7 @@
     </div>
 
     <div class="card">
-        <div data-toggle="collapse" data-target="#collapseDiagnoses" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseDiagnoses" id="headingDiagnoses"><span aria-hidden="true" class="fa fa-caret-right mr-2"></span><span aria-hidden="true" class="fa fa-caret-down mr-2"></span> Diagnoses </div>
+        <div data-toggle="collapse" data-target="#collapseDiagnoses" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseDiagnoses" id="headingDiagnoses"><span aria-hidden="true" class="bi bi-caret-right-fill mr-2"></span><span aria-hidden="true" class="bi bi-caret-down-fill mr-2"></span> Diagnoses </div>
         <div id="collapseDiagnoses" class="collapse" aria-labelledby="headingDiagnoses">
         <div class="card-body">
             <div class="custom-control"><input type="checkbox" name="diagnoses" class="form-check-input" value="Laboratory-confirmed COVID-19 diagnosis; U07.1">Laboratory-confirmed COVID-19 diagnosis; U07.1</div>
@@ -26,7 +27,7 @@
     </div>
 
       <div class="card">
-          <div data-toggle="collapse" data-target="#collapseMaterials" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseMaterials" id="headingMaterials"><span aria-hidden="true" class="fa fa-caret-right mr-2"></span><span aria-hidden="true" class="fa fa-caret-down mr-2"></span> Materials </div>
+          <div data-toggle="collapse" data-target="#collapseMaterials" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseMaterials" id="headingMaterials"><span aria-hidden="true" class="bi bi-caret-right-fill mr-2"></span><span aria-hidden="true" class="bi bi-caret-down-fill mr-2"></span> Materials </div>
           <div id="collapseMaterials" class="collapse" aria-labelledby="headingMaterials">
           <div class="card-body">
               <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Buffy Coat">Buffy Coat</div>
@@ -56,7 +57,7 @@
       </div>
 
       <div class="card">
-          <div data-toggle="collapse" data-target="#collapseCollectionTypes" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseCollectionTypes" id="headingCollectionTypes"><span aria-hidden="true" class="fa fa-caret-right mr-2"></span><span aria-hidden="true" class="fa fa-caret-down mr-2"></span> Collection types </div>
+          <div data-toggle="collapse" data-target="#collapseCollectionTypes" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseCollectionTypes" id="headingCollectionTypes"><span aria-hidden="true" class="bi bi-caret-right-fill mr-2"></span><span aria-hidden="true" class="bi bi-caret-down-fill mr-2"></span> Collection types </div>
           <div id="collapseCollectionTypes" class="collapse" aria-labelledby="headingCollectionTypes">
           <div class="card-body">
               <div class="custom-control"><input type="checkbox" name="collectiontypes" class="form-check-input" value="Healthcare sample collection">Healthcare sample collection</div>
@@ -66,7 +67,7 @@
       </div>
 
       <!-- <div class="card">
-          <div data-toggle="collapse" data-target="#collapseDataTypes" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseDataTypes" id="headingDataTypes"><span aria-hidden="true" class="fa fa-caret-right mr-2"></span><span aria-hidden="true" class="fa fa-caret-down mr-2"></span> Data types </div>
+          <div data-toggle="collapse" data-target="#collapseDataTypes" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseDataTypes" id="headingDataTypes"><span aria-hidden="true" class="fa fa-caret-right mr-2"></span><span aria-hidden="true" class="bi bi-caret-down-fill mr-2"></span> Data types </div>
           <div id="collapseDataTypes" class="collapse" aria-labelledby="headingDataTypes">
           <div class="card-body">
               <div class="custom-control"><input type="checkbox" name="datatypes" class="form-check-input" value="Biological samples">Biological samples</div>
@@ -85,7 +86,7 @@
         <div class="row"><div class="col">Biobanks: {{ $len_biobanks }}</div></div>
         <div class="row"><div class="col">Collections: {{ $len_collections }}</div></div>
         </div>
-
+        </div>
   </div>
 
   <div class="col-md-9 mt-4 mt-md-0">
@@ -157,7 +158,7 @@
 
     var table = $('#collections').DataTable({
       "sDom": '<"top row"<"col-md"i>>rt<"bottom row"<"col-md"l><"col-md"p>><"clear">',
-      "columnDefs": [{ "orderable": false, "targets": [2, 3] },
+      "columnDefs": [{ "orderable": false, "targets": [2, 3, 4] },
         {"targets": [0,5],  "visible": false}],
       "language": {
       "lengthMenu": "Show _MENU_ collections per page",
@@ -197,7 +198,8 @@
 
               // Add category name to the <tr>. NOTE: Hardcoded colspan
               return $('<tr/>')
-                  .append('<td colspan="6"><span aria-hidden="true" class="fa fa-caret-right mr-2"></span><span aria-hidden="true" class="fa fa-caret-down mr-2"></span> ' + group + ' (' + rows.count() + '):</td>')
+                  // .append('<td colspan="6"><span aria-hidden="true" class="bi bi-caret-right-fill mr-2 bname"></span><span aria-hidden="true" class="bi bi-caret-down-fill mr-2 bname"></span> ' + group + ' (' + rows.count() + '):</td>') // with the count but it's wrong because of pagination
+                  .append('<td colspan="6"><span aria-hidden="true" class="bi bi-caret-right-fill mr-2 bname"></span><span aria-hidden="true" class="bi bi-caret-down-fill mr-2 bname"></span> ' + group + ':</td>')
                   .attr('data-name', all)
                   .toggleClass('collapsed', collapsed);
           }
