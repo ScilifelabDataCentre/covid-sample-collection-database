@@ -158,7 +158,7 @@
 
     var table = $('#collections').DataTable({
       "sDom": '<"top row"<"col-md"i>>rt<"bottom row"<"col-md"l><"col-md"p>><"clear">',
-      "columnDefs": [{ "orderable": false, "targets": [2, 3] },
+      "columnDefs": [{ "orderable": false, "targets": [2, 3, 4] },
         {"targets": [0,5],  "visible": false}],
       "language": {
       "lengthMenu": "Show _MENU_ collections per page",
@@ -198,7 +198,8 @@
 
               // Add category name to the <tr>. NOTE: Hardcoded colspan
               return $('<tr/>')
-                  .append('<td colspan="6"><span aria-hidden="true" class="bi bi-caret-right-fill mr-2 bname"></span><span aria-hidden="true" class="bi bi-caret-down-fill mr-2 bname"></span> ' + group + ' (' + rows.count() + '):</td>')
+                  // .append('<td colspan="6"><span aria-hidden="true" class="bi bi-caret-right-fill mr-2 bname"></span><span aria-hidden="true" class="bi bi-caret-down-fill mr-2 bname"></span> ' + group + ' (' + rows.count() + '):</td>') // with the count but it's wrong because of pagination
+                  .append('<td colspan="6"><span aria-hidden="true" class="bi bi-caret-right-fill mr-2 bname"></span><span aria-hidden="true" class="bi bi-caret-down-fill mr-2 bname"></span> ' + group + ':</td>')
                   .attr('data-name', all)
                   .toggleClass('collapsed', collapsed);
           }
