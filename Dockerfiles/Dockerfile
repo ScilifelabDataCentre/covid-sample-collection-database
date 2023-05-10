@@ -1,5 +1,6 @@
-FROM klakegg/hugo:0.83.1-onbuild AS build
+FROM klakegg/hugo:0.104.3-ubuntu-onbuild AS build
 
-FROM nginx:1.21-alpine
-COPY Dockerfiles/default.conf /etc/nginx/conf.d/default.conf
+FROM nginxinc/nginx-unprivileged:alpine
 COPY --from=build /target /usr/share/nginx/html
+
+EXPOSE 8080
