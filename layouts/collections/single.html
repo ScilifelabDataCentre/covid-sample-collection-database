@@ -110,19 +110,21 @@
             <div class="col-auto pl-0 font-weight-bold">Ethical approval number:</div>
             <div class="col pl-0">{{ .Params.ethics_id }}</div>
           </div>
+          {{ if eq .Params.name "National sample collection stored at National Pandemic Center (NPC)" }}
+          {{ else }}
           <div class="row ml-0 mt-3">
             <h4>Donor information</h4>
-          </div>
+          </div> {{ end }}
           {{ if .Params.diagnosis_available }}<div class="row ml-0">
             <div class="col-auto pl-0 font-weight-bold">Diagnoses:</div>
             <div class="col pl-0">
               {{ range .Params.diagnosis_available}}
-                {{ if eq . "urn:miriam:icd:U07.1" }}
-                <span class="m-1 badge badge-primary">Laboratory-confirmed COVID-19 diagnosis; U07.1</span>
-                {{ end }}
-                {{ if eq . "urn:miriam:icd:U07.2" }}
-                <span class="m-1 badge badge-primary">Suspect or probable COVID-19 diagnosis; U07.2</span>
-                {{ end }}
+              {{ if eq . "urn:miriam:icd:U07.1" }}
+              <span class="m-1 badge badge-primary">Laboratory-confirmed COVID-19 diagnosis; U07.1</span>
+              {{ end }}
+              {{ if eq . "urn:miriam:icd:U07.2" }}
+              <span class="m-1 badge badge-primary">Suspect or probable COVID-19 diagnosis; U07.2</span>
+              {{ end }}
               {{ end }}
             </div>
           </div>{{ end }}
@@ -154,23 +156,25 @@
           {{ $info_about_autopsy := string .Params.autopsy }}
           {{ if $info_about_autopsy }}<div class="row ml-0">
             <div class="col-auto pl-0 font-weight-bold">Samples from deceased (autopsy):</div>
-            <div class="col pl-0">{{ if eq $info_about_autopsy "true" }}yes{{ else if eq $info_about_autopsy "false" }}no{{ end }}</div>
+            <div class="col pl-0">
+              {{ if eq $info_about_autopsy "true" }}yes{{ else if eq $info_about_autopsy "false" }}no{{ end }}</div>
           </div> {{ end }}
           {{ $info_about_minors := string .Params.minors }}
           {{ if $info_about_minors }}<div class="row ml-0">
             <div class="col-auto pl-0 font-weight-bold">Samples from minors (&lt;18 years old):</div>
-            <div class="col pl-0">{{ if eq $info_about_minors "true" }}yes{{ else if eq $info_about_minors "false" }}no{{ end }}</div>
+            <div class="col pl-0">
+              {{ if eq $info_about_minors "true" }}yes{{ else if eq $info_about_minors "false" }}no{{ end }}</div>
           </div> {{ end }}
           {{ if .Params.inclusion_criteria }}<div class="row ml-0">
             <div class="mb-3">
               <b>Inclusion criteria:</b> {{ .Params.inclusion_criteria }}
             </div>
-            </div>{{ end }}
+          </div>{{ end }}
           {{ if .Params.exclusion_criteria }}<div class="row ml-0">
             <div class="mb-3">
               <b>Exclusion criteria:</b> {{ .Params.exclusion_criteria }}
             </div>
-            </div>{{ end }}
+          </div>{{ end }}
           <div class="row ml-0 mt-3">
             <h4>Sample information</h4>
           </div>
@@ -178,7 +182,7 @@
             <div class="col-auto pl-0 font-weight-bold">Materials:</div>
             <div class="col pl-0">{{ range (.GetTerms "materials") }}
               <span class="m-1 badge badge-danger taxonomy-term"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></span>
-            {{ end }}
+              {{ end }}
             </div>
           </div>
         </div>
@@ -188,17 +192,40 @@
               <div class="card-text">
                 {{ if .Params.display_collection_contact }}
                 <h5>Collection contact information</h5>
-                {{ if .Params.head_firstname }}<div class="row"><div class="col">Collection head: {{ .Params.head_firstname }} {{ .Params.head_lastname }} {{ if .Params.head_role }}({{ .Params.head_role }}){{ end }}</div></div>{{ end }}
-                <div class="row"><div class="col">Contact person: {{ .Params.collection_contact.first_name }} {{ .Params.collection_contact.last_name }}</div></div>
-                <div class="row"><div class="col"><i class="bi bi-envelope-fill mr-2"></i><span>{{ .Params.collection_contact.email }} </span></div></div>
-                {{ if .Params.website_url }}<div class="row"><div class="col"><i class="bi bi-globe mr-2"></i><a href="{{ .Params.website_url }}" target="_blank"><span>Collection homepage</span></a></div></div>{{ end }}
+                {{ if .Params.head_firstname }}<div class="row">
+                  <div class="col">Collection head: {{ .Params.head_firstname }} {{ .Params.head_lastname }}
+                    {{ if .Params.head_role }}({{ .Params.head_role }}){{ end }}</div>
+                </div>{{ end }}
+                <div class="row">
+                  <div class="col">Contact person: {{ .Params.collection_contact.first_name }}
+                    {{ .Params.collection_contact.last_name }}</div>
+                </div>
+                <div class="row">
+                  <div class="col"><i class="bi bi-envelope-fill mr-2"></i><span>{{ .Params.collection_contact.email }}
+                    </span></div>
+                </div>
+                {{ if .Params.website_url }}<div class="row">
+                  <div class="col"><i class="bi bi-globe mr-2"></i><a href="{{ .Params.website_url }}"
+                      target="_blank"><span>Collection homepage</span></a></div>
+                </div>{{ end }}
                 {{ end }}
                 <h5>Biobank contact information</h5>
-                <div class="row"><div class="col">{{ .Parent.Params.name }}</div></div>
-                {{ if .Parent.Params.ivo_regnum }}<div class="row"><div class="col">Registration number at IVO: {{ .Parent.Params.ivo_regnum }}</div></div>{{ end }}
-                {{ if .Parent.Params.email }}<div class="row"><div class="col"><i class="bi bi-envelope-fill mr-2"></i>{{ .Parent.Params.email }}</div></div>{{ end }}
-                {{ if .Parent.Params.website_url }}<div class="row"><div class="col"><i class="bi bi-globe mr-2"></i><a href="{{ .Parent.Params.website_url }}" target="_blank"><span>Biobank homepage</span></a></div></div>{{ end }}
-                <div class="row mt-2"><div class="col"><a href="{{ .Parent.RelPermalink }}" class=""><span>All collections of {{ .Parent.Params.name }}</span> <i class="bi bi-arrow-right-circle-fill"></i></a></div></div>
+                <div class="row">
+                  <div class="col">{{ .Parent.Params.name }}</div>
+                </div>
+                {{ if .Parent.Params.ivo_regnum }}<div class="row">
+                  <div class="col">Registration number at IVO: {{ .Parent.Params.ivo_regnum }}</div>
+                </div>{{ end }}
+                {{ if .Parent.Params.email }}<div class="row">
+                  <div class="col"><i class="bi bi-envelope-fill mr-2"></i>{{ .Parent.Params.email }}</div>
+                </div>{{ end }}
+                {{ if .Parent.Params.website_url }}<div class="row">
+                  <div class="col"><i class="bi bi-globe mr-2"></i><a href="{{ .Parent.Params.website_url }}"
+                      target="_blank"><span>Biobank homepage</span></a></div>
+                </div>{{ end }}
+                <div class="row mt-2">
+                  <div class="col"><a href="{{ .Parent.RelPermalink }}" class=""><span>All collections of
+                        {{ .Parent.Params.name }}</span> <i class="bi bi-arrow-right-circle-fill"></i></a></div>
                 </div>
               </div>
             </div>
@@ -207,5 +234,6 @@
       </div>
     </div>
   </div>
+</div>
 
 {{ end }}

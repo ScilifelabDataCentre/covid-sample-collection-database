@@ -3,7 +3,7 @@ languageCode: "en-us"
 title: "The Swedish COVID-19 Sample Collection Database"
 params:
   title: "The Swedish COVID-19 Sample Collection Database"
-  description: "The Swedish COVID-19 Sample Collection Database, part of the COVID-19 Data Portal Sweden"
+  description: "The Swedish COVID-19 Sample Collection Database, part of the Swedish COVID-19 and Pandemic Preparedness Portal"
 markup:
   goldmark:
     renderer:
