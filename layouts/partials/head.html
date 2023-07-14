@@ -2,7 +2,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Site meta -->
-  <title>{{ if eq .Page.Section "collections" }} {{ .Params.name }}{{ else }}{{ .Title }}{{ end }} | {{ .Site.Title }}</title>
+  <title>{{ if eq .Page.Section "collections" }} {{ .Params.name }}{{ else if and (ne .Title "Swedish COVID-19 & Pandemic Preparedness Data Portal") (ne .Title "Svenska dataportalen för Covid-19 & pandemisk beredskap")}}{{ .Title }} | {{ else }}{{ .Title }}{{ end }} | {{ .Site.Title }}</title>
   <meta name="description" content='{{ if .IsHome }}{{ .Param "description" }}{{ else }}{{ .Description }}{{ end }}'>
   <meta http-equiv="content-language" content="en">
 
