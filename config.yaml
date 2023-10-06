@@ -1,9 +1,9 @@
-baseURL: "http://biobanks.covid19dataportal.se/"
+baseURL: "http://biobanks.pathogens.se/"
 languageCode: "en-us"
 title: "The Swedish COVID-19 Sample Collection Database"
 params:
   title: "The Swedish COVID-19 Sample Collection Database"
-  description: "The Swedish COVID-19 Sample Collection Database, part of the Swedish COVID-19 and Pandemic Preparedness Portal"
+  description: "The Swedish COVID-19 Sample Collection Database, part of the Swedish Pathogens Portal"
 markup:
   goldmark:
     renderer:

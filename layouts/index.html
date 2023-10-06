@@ -112,7 +112,7 @@
                 <td>{{ .Parent.Params.acronym }}</td>
                 <td><h6><a href="{{ .RelPermalink }}">{{ .Params.name }}</a></h6></td>
                 <td><span class="m-1 badge badge-secondary">{{ .Params.collection_category }}</span></td>
-                <td><span class="m-1 badge badge-success">{{ if eq .Params.order_of_magnitude 0 }}
+                <td><span class="m-1 badge badge-teal">{{ if eq .Params.order_of_magnitude 0 }}
                               &#60;10
                               {{ else if eq .Params.order_of_magnitude 1 }}
                               10 - 100
@@ -131,8 +131,8 @@
                               {{ else if eq .Params.order_of_magnitude 8 }}
                               100.000.000 - 1.000.000.000
                               {{ end }}</span></td>
-                <td><span class="m-1 badge badge-danger">{{ range (.GetTerms "materials") }}</span>
-                    <span class="m-1 badge badge-danger taxonomy-term"><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></span>
+                <td><span class="m-1 badge badge-blue">{{ range (.GetTerms "materials") }}</span>
+                    <span class="m-1 badge badge-blue taxonomy-term"><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></span>
                   {{ end }}</td>
                 <td>{{ if .Params.diagnosis_available }}{{ range .Params.diagnosis_available}}
                   {{ if eq . "urn:miriam:icd:U07.1" }}
