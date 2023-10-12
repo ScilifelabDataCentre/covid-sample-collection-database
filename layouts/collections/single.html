@@ -18,32 +18,32 @@
             <b>Description:</b> {{ .Params.description }}
           </div>{{ end }}
           {{ if .Params.acronym }}<div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">Acronym:</div>
-            <div class="col pl-0">{{ .Params.acronym }}
+            <div class="col-md-auto pl-0 font-weight-bold">Acronym:</div>
+            <div class="col-md pl-0">{{ .Params.acronym }}
             </div>
           </div>{{ end }}
           {{ if .Params.parent_collection }}<div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">Parent collection:</div>
-            <div class="col pl-0">{{ .Params.parent_collection }}
+            <div class="col-md-auto pl-0 font-weight-bold">Parent collection:</div>
+            <div class="col-md pl-0">{{ .Params.parent_collection }}
             </div>
           </div>{{ end }}
           {{ if .Params.sub_collections }}<div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">Child collection(s):</div>
-            <div class="col pl-0">{{ .Params.sub_collections }}
+            <div class="col-md-auto pl-0 font-weight-bold">Child collection(s):</div>
+            <div class="col-md pl-0">{{ .Params.sub_collections }}
             </div>
           </div>{{ end }}
           <div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">Biobank:</div>
-            <div class="col pl-0">{{ .Parent.Params.name }}
+            <div class="col-md-auto pl-0 font-weight-bold">Biobank:</div>
+            <div class="col-md pl-0">{{ .Parent.Params.name }}
             </div>
           </div>
           <div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">Local collection ID (within the biobank):</div>
-            <div class="col pl-0">{{ .Params.local_id }}</div>
+            <div class="col-md-auto pl-0 font-weight-bold">Local collection ID (within the biobank):</div>
+            <div class="col-md pl-0">{{ .Params.local_id }}</div>
           </div>
           {{ if .Params.bbmri_id }}<div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">BBMRI-ERIC ID:</div>
-            <div class="col pl-0">{{ .Params.bbmri_id }}
+            <div class="col-md-auto pl-0 font-weight-bold">BBMRI-ERIC ID:</div>
+            <div class="col-md pl-0">{{ .Params.bbmri_id }}
             </div>
           </div>{{ end }}
           <div class="row ml-0 mt-3">
@@ -51,8 +51,8 @@
           </div>
           {{ if .Params.order_of_magnitude }}
           <div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">Collection size:</div>
-            <div class="col pl-0">
+            <div class="col-md-auto pl-0 font-weight-bold">Collection size:</div>
+            <div class="col-md pl-0">
               {{ if eq .Params.order_of_magnitude 0 }}
               &#60;10
               {{ else if eq .Params.order_of_magnitude 1 }}
@@ -75,40 +75,40 @@
               (as of {{ substr .Params.timestamp 0 10 }})</div>
           </div> {{ end }}
           <div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">Type:</div>
-            <div class="col pl-0"> {{ range .Params.collection_type }}
+            <div class="col-md-auto pl-0 font-weight-bold">Type:</div>
+            <div class="col-md pl-0"> {{ range .Params.collection_type }}
               <span class="m-1 badge badge-info">{{ . }}</span>
               {{ end }}
             </div>
           </div>
           <div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">Data:</div>
-            <div class="col pl-0"> {{ range .Params.data_categories }}
+            <div class="col-md-auto pl-0 font-weight-bold">Data:</div>
+            <div class="col-md pl-0"> {{ range .Params.data_categories }}
               <span class="m-1 badge badge-secondary">{{ . }}</span>
               {{ end }}
             </div>
           </div>
           {{ if .Params.sampling_startdate }}
           <div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">Start date of sampling:</div>
-            <div class="col pl-0">{{ substr .Params.sampling_startdate 0 10 }}</div>
+            <div class="col-md-auto pl-0 font-weight-bold">Start date of sampling:</div>
+            <div class="col-md pl-0">{{ substr .Params.sampling_startdate 0 10 }}</div>
           </div>
           {{ end }}
           {{ if .Params.sampling_enddate }}
           <div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">End date of sampling:</div>
-            <div class="col pl-0">{{ substr .Params.sampling_enddate 0 10 }}</div>
+            <div class="col-md-auto pl-0 font-weight-bold">End date of sampling:</div>
+            <div class="col-md pl-0">{{ substr .Params.sampling_enddate 0 10 }}</div>
           </div>
           {{ end }}
           {{ if .Params.storage_duration }}
           <div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">Collection preserved at least until:</div>
-            <div class="col pl-0">{{ substr .Params.storage_duration 0 10 }}</div>
+            <div class="col-md-auto pl-0 font-weight-bold">Collection preserved at least until:</div>
+            <div class="col-md pl-0">{{ substr .Params.storage_duration 0 10 }}</div>
           </div>
           {{ end }}
           <div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">Ethical approval number:</div>
-            <div class="col pl-0">{{ .Params.ethics_id }}</div>
+            <div class="col-md-auto pl-0 font-weight-bold">Ethical approval number:</div>
+            <div class="col-md pl-0">{{ .Params.ethics_id }}</div>
           </div>
           {{ if eq .Params.name "National sample collection stored at National Pandemic Center (NPC)" }}
           {{ else }}
@@ -116,8 +116,8 @@
             <h4>Donor information</h4>
           </div> {{ end }}
           {{ if .Params.diagnosis_available }}<div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">Diagnoses:</div>
-            <div class="col pl-0">
+            <div class="col-md-auto pl-0 font-weight-bold">Diagnoses:</div>
+            <div class="col-md pl-0">
               {{ range .Params.diagnosis_available}}
               {{ if eq . "urn:miriam:icd:U07.1" }}
               <span class="m-1 badge badge-primary">Laboratory-confirmed COVID-19 diagnosis; U07.1</span>
@@ -130,8 +130,8 @@
           </div>{{ end }}
           {{ if .Params.order_of_magnitude_donors }}
           <div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">Number of donors:</div>
-            <div class="col pl-0">
+            <div class="col-md-auto pl-0 font-weight-bold">Number of donors:</div>
+            <div class="col-md pl-0">
               {{ if eq .Params.order_of_magnitude_donors 0 }}
               &#60;10
               {{ else if eq .Params.order_of_magnitude_donors 1 }}
@@ -155,14 +155,14 @@
           </div>{{ end }}
           {{ $info_about_autopsy := string .Params.autopsy }}
           {{ if $info_about_autopsy }}<div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">Samples from deceased (autopsy):</div>
-            <div class="col pl-0">
+            <div class="col-md-auto pl-0 font-weight-bold">Samples from deceased (autopsy):</div>
+            <div class="col-md pl-0">
               {{ if eq $info_about_autopsy "true" }}yes{{ else if eq $info_about_autopsy "false" }}no{{ end }}</div>
           </div> {{ end }}
           {{ $info_about_minors := string .Params.minors }}
           {{ if $info_about_minors }}<div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">Samples from minors (&lt;18 years old):</div>
-            <div class="col pl-0">
+            <div class="col-md-auto pl-0 font-weight-bold">Samples from minors (&lt;18 years old):</div>
+            <div class="col-md pl-0">
               {{ if eq $info_about_minors "true" }}yes{{ else if eq $info_about_minors "false" }}no{{ end }}</div>
           </div> {{ end }}
           {{ if .Params.inclusion_criteria }}<div class="row ml-0">
@@ -179,9 +179,9 @@
             <h4>Sample information</h4>
           </div>
           <div class="row ml-0">
-            <div class="col-auto pl-0 font-weight-bold">Materials:</div>
-            <div class="col pl-0">{{ range (.GetTerms "materials") }}
-              <span class="m-1 badge badge-danger taxonomy-term"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></span>
+            <div class="col-md-auto pl-0 font-weight-bold">Materials:</div>
+            <div class="col-md pl-0">{{ range (.GetTerms "materials") }}
+              <span class="m-1 badge badge-blue taxonomy-term"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></span>
               {{ end }}
             </div>
           </div>

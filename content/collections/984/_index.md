@@ -7,7 +7,7 @@ country: SE
 biobank_sverige: TRUE
 ivo_regnum: 984
 bbmri_id:
-website_url: https://biobanksverige.se/kontakta-oss/biobankssamordnare-och-nej-talonger/
+website_url: https://biobanksverige.se/forskning/
 description:
 address:
 contact: c19dp:contact:SE_1984

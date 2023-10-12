@@ -47,7 +47,7 @@
                 {{ if .Params.order_of_magnitude }}
                 <tr>
                   <th scope="row" class="pr-1">Size:</th>
-                  <td><span class="m-1 badge badge-success">
+                  <td><span class="m-1 badge badge-teal">
                     {{ if eq .Params.order_of_magnitude 0 }}
                     &#60;10
                     {{ else if eq .Params.order_of_magnitude 1 }}
@@ -72,7 +72,7 @@
                 <tr>
                   <th scope="row" class="pr-1">Materials:</th>
                   <td>{{ range (.GetTerms "materials") }}
-                    <span class="m-1 badge badge-danger taxonomy-term"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></span>
+                    <span class="m-1 badge badge-blue taxonomy-term"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></span>
                     {{ end }}</td>
                 </tr>
                 <tr>
