@@ -72,7 +72,7 @@
                 <tr>
                   <th scope="row" class="pr-1">Materials:</th>
                   <td>{{ range (.GetTerms "materials") }}
-                    <span class="m-1 badge badge-blue taxonomy-term"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></span>
+                    <span class="m-1 badge badge-blue taxonomy-term"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></span>
                     {{ end }}</td>
                 </tr>
                 <tr>
