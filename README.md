@@ -1,8 +1,8 @@
-# ![COVID-19 Data Portal Sweden](https://covid19dataportal.se/img/site_logo/CV19DP_logo_oneliner_SWE.png)
+# ![The Swedish Pathogens Portal](static/img/swe_pathogens_logo.png)
 
 # The Swedish COVID-19 Sample Collection Database
 
-This is the source code for the [Swedish COVID-19 Sample Collection Database](https://biobanks.covid19dataportal.se), part of the [Swedish COVID-19 Data Portal](https://covid19dataportal.se). The database is maintained in collaboration with [Biobank Sverige](https://biobanksverige.se/).
+This is the source code for the [Swedish COVID-19 Sample Collection Database](https://biobanks.pathogens.se), part of the [Swedish Pathogens Portal](https://pathogens.se). The database is maintained in collaboration with [Biobank Sverige](https://biobanksverige.se/).
 
 The site is built using the [Hugo](https://gohugo.io/) static web site generator.
 In addition, it uses [Bootstrap 4](https://getbootstrap.com/), [Font Awesome](https://fontawesome.com), [DataTables](https://datatables.net/).
@@ -35,9 +35,9 @@ On the web page of your _forked_ copy of the repository, look in the `content/co
 
 Note also that the filenames correspond to the website URL:
 
-- [https://biobanks.covid19dataportal.se/collections/325/1/](https://biobanks.covid19dataportal.se/collections/325/1/)
+- [https://biobanks.pathogens.se/collections/325/1/](https://biobanks.pathogens.se/collections/325/1/)
     - `content/collections/325/1.md`
-- [https://biobanks.covid19dataportal.se/collections/325/](https://biobanks.covid19dataportal.se/collections/325/)
+- [https://biobanks.pathogens.se/collections/325/](https://biobanks.pathogens.se/collections/325/)
     - `content/collections/325/_index.md`
 
 Go to the markdown file that you want to edit, then click the Pencil icon :pencil2: in the top right.

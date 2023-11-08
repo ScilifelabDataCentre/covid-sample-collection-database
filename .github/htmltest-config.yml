@@ -1,0 +1,14 @@
+CheckDoctype: false
+CheckLinks: false
+CheckMeta: false
+CheckGeneric: false
+CheckInternal: false
+CheckInternalHash: false
+CheckMailto: false
+CheckTel: false
+CheckMetaRefresh: false
+IgnoreInternalEmptyHash: true
+IgnoreEmptyHref: true
+IgnoreAltMissing: true
+IgnoreAltEmpty: true
+IgnoreDirectoryMissingTrailingSlash: true

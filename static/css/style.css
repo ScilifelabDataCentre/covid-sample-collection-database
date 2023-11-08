@@ -1,7 +1,27 @@
+a.nav-link {
+  color: rgba(71, 112, 177, 0.9) !important;
+  font-weight: 500;
+}
+
+a.nav-link:hover {
+  color: rgba(71, 112, 177, 1) !important;
+  text-decoration: underline;
+}
+
 .card .fa-caret-right { display: none; }
 .card .fa-caret-down { display: inline; }
 .card .collapsed .fa-caret-right { display: inline; }
 .card .collapsed .fa-caret-down { display: none; }
+
+.badge-blue {
+  background-color: #295986;
+  color: white;
+}
+
+.badge-teal {
+  background-color: #37AE94;
+  color: white;
+}
 
 .taxonomy-term a {
   color: white;
