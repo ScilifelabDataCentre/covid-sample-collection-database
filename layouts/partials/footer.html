@@ -23,7 +23,8 @@
 
     <!-- The hugo env value is passed via github action, during image building -->
     {{ $env_info := split hugo.Environment "-" }}
-    {{ $code_version := substr (index $env_info 1) 0 7 }}
+    {{ $git_sha := index $env_info 1 }}
+    {{ $code_version := cond (strings.HasPrefix $git_sha "v") $git_sha (substr $git_sha 0 7) }}
     <div class="d-flex flex-column flex-md-row justify-content-md-center mt-2">
       <a class="small pr-md-2" target="_blank"
          href="https://github.com/ScilifelabDataCentre/covid-sample-collection-database{{ with $code_version }}/tree/{{ $code_version }}{{ end }}">
