@@ -48,8 +48,8 @@
               <option value="biobank_other">Other (please specify)</option>
             </select>
             <div id="biobank_other_name_text" class="form-group mt-3 d-none">
-              <small class="form-text mb-1"><b>Specify the name of the biobank:*</b></small>
-              <input type="text" class="form-control" id="biobank_other_name" name="biobank_other_name" maxlength="100">
+              <label for="biobank_other_name" class="form-text mb-1"><small><b>Specify the name of the biobank:*</b></small></label>
+              <input type="text" class="form-control" id="biobank_other_name" name="biobank_other_name" maxlength="100" aria-required="true">
             </div>
             <small class="form-text">Provide the name of the biobank to which the collection belongs. Not all
               biobanks have been added to the Swedish COVID-19 Sample Collection database. In order to add a new
@@ -60,32 +60,32 @@
           </div>
           <div class="form-group mb-3">
             <label for="collection_name"><b>Collection name:*</b></label>
-            <input type="text" class="form-control" name="collection_name" required>
+            <input type="text" class="form-control" name="collection_name" id="collection_name" required>
             <small class="form-text">Collection name (as required by <a
                 href="https://github.com/MIABIS/miabis/blob/master/Data-describing-Sample-Collection.md">MIABIS-2.0-03</a>).</small>
-          </div>
+          </div>        
           <div class="form-group mb-3">
             <label for="collection_acronym"><b>Collection acronym:</b></label>
-            <input type="text" class="form-control" name="collection_acronym">
+            <input type="text" class="form-control" name="collection_acronym" id="collection_acronym">
             <small class="form-text">Collection acronym (as required by <a
                 href="https://github.com/MIABIS/miabis/blob/master/Data-describing-Sample-Collection.md">MIABIS-2.0-02</a>).</small>
           </div>
           <div class="form-group mb-3">
             <label for="parent_collection"><b>Parent collection:</b></label>
-            <input type="text" class="form-control" name="parent_collection">
+            <input type="text" class="form-control" name="parent_collection" id="parent_collection">
             <small class="form-text">If this is a subcollection of a larger collection, provide the name or
               local ID of the parent collection.</small>
           </div>
           <div class="row mb-3">
             <div class="form-group col-md-6">
               <label for="collection_local_id"><b>Local collection ID:*</b></label>
-              <input type="text" class="form-control" name="collection_local_id" required>
+              <input type="text" class="form-control" name="collection_local_id" id="collection_local_id" required>
               <small class="form-text">Collection ID within the biobank. Please put "N/A" in case the local
                 collection ID is not available (healthcare samples).</small>
             </div>
             <div class="form-group col-md-6">
               <label for="collection_bbmri_id"><b>BBMRI-ERIC collection ID:</b></label>
-              <input type="text" class="form-control" name="collection_bbmri_id">
+              <input type="text" class="form-control" name="collection_bbmri_id" id="collection_bbmri_id">
               <small class="form-text">If the collection is already listed at BBMRI-ERIC, please provide its
                 unique ID within BBMRI-ERIC. This ID is constructed from biobankID prefix + :collection: + local
                 collection ID string (as required by <a
@@ -95,13 +95,13 @@
           </div>
           <div class="form-group mb-3">
             <label for="collection_description"><b>Collection description:</b></label>
-            <textarea class="form-control" id="description" rows="3" name="collection_description"></textarea>
+            <textarea class="form-control" id="collection_description" rows="3" name="collection_description"></textarea>
             <small class="form-text">Collection description (as required by <a
                 href="https://github.com/MIABIS/miabis/blob/master/Data-describing-Sample-Collection.md">MIABIS-2.0-08</a>).</small>
           </div>
           <div class="form-group mb-3">
             <label for="collection_url"><b>Collection homepage URL:</b></label>
-            <input type="url" class="form-control" name="collection_url">
+            <input type="url" class="form-control" name="collection_url" id="collection_url">
             <small class="form-text">Collection homepage URL.</small>
           </div>
           <div class="form-group mb-3">
@@ -113,19 +113,19 @@
           </div>
           <div class="form-group mb-3">
             <label for="collection_ethics_id"><b>Swedish ethical approval ID:*</b></label>
-            <input type="text" class="form-control" name="collection_ethics_id" required>
+            <input type="text" class="form-control" name="collection_ethics_id" id="collection_ethics_id" required>
             <small class="form-text">Registration number of the Swedish ethical approval. Please put "N/A" in
               case ethical approval was not required (healthcare samples).</small>
           </div>
           <div class="row mb-3">
             <div class="form-group col-md-6">
               <label for="sampling_start_date"><b>Start date of sampling:*</b></label>
-              <input type="date" class="form-control" name="sampling_start_date" required>
+              <input type="date" class="form-control" name="sampling_start_date" id="sampling_start_date" required>
               <small class="form-text">When did the sampling for this collection start.</small>
             </div>
             <div class="form-group col-md-6">
               <label for="sampling_end_date"><b>End date of sampling:</b></label>
-              <input type="date" class="form-control" name="sampling_end_date">
+              <input type="date" class="form-control" name="sampling_end_date" id="sampling_end_date">
               <small class="form-text">When did the sampling for this collection end. Leave blank if sampling
                 is ongoing.</small>
             </div>
@@ -133,7 +133,7 @@
           <div class="row mb-3">
             <div class="form-group col-md-6">
               <label for="collection_preserved_until"><b>Until when will the collection be preserved?*</b></label>
-              <input type="date" class="form-control" name="collection_preserved_until" required>
+              <input type="date" class="form-control" name="collection_preserved_until" id="collection_preserved_until" required>
               <small class="form-text">Provide a date until which the collection is guaranteed to be
                 available. After this date, the researchers will be advised to contact the biobank to ask whether the
                 collection is still available.</small>
@@ -348,7 +348,7 @@
             </div>
             <div class="form-group col-md-6">
               <label for="size_ofcollection_updated_date"><b>Date size information last updated:*</b></label>
-              <input type="date" class="form-control" name="size_ofcollection_updated_date" required>
+              <input type="date" class="form-control" name="size_ofcollection_updated_date" id="size_ofcollection_updated_date" required>
               <small class="form-text">Date to which the indicated size of the collection was valid.</small>
             </div>
           </div>
@@ -534,39 +534,38 @@
               <small class="form-text">Number of donors from whom samples were obtained.</small>
             </div>
           </div>
+            <div class="form-group mb-3">
+              <label><b>Samples from deceased (autopsy)?</b></label>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="donor_autopsy" id="donor_autopsy_yes" value="TRUE">
+                  <label class="form-check-label" for="donor_autopsy_yes">Yes</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="donor_autopsy" id="donor_autopsy_no" value="FALSE">
+                  <label class="form-check-label" for="donor_autopsy_no">No</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="donor_autopsy" id="donor_autopsy_na" value="na">
+                  <label class="form-check-label" for="donor_autopsy_na">N/A</label>
+              </div>
+              <small class="form-text">Indicate whether the samples were obtained during autopsies.</small>
+            </div>
           <div class="form-group mb-3">
-            <label for="donor_autopsy"><b>Samples from deceased (autopsy)?</b></label>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="donor_autopsy" id="yes" value="TRUE">
-              <label class="form-check-label" for="yes">Yes</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="donor_autopsy" id="no" value="FALSE">
-              <label class="form-check-label" for="no">No</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="donor_autopsy" id="na" value="na">
-              <label class="form-check-label" for="na">N/A</label>
-            </div>
-            <small class="form-text">Indicate whether the samples were obtained during autopsies.</small>
-          </div>
-          <div class="form-group mb-3">
-            <label for="donor_minors"><b>Samples from children/minors (<18 years old)?</b></label>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="donor_minors" id="yes" value="TRUE">
-              <label class="form-check-label" for="yes">Yes</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="donor_minors" id="no" value="FALSE">
-              <label class="form-check-label" for="no">No</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="donor_minors" id="na" value="na">
-              <label class="form-check-label" for="na">N/A</label>
-            </div>
-            <small class="form-text">Indicate whether the samples were obtained from individals below 18
-              years old.</small>
-          </div>
+              <label><b>Samples from children/minors (<18 years old)?</b></label>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="donor_minors" id="donor_minors_yes" value="TRUE">
+                  <label class="form-check-label" for="donor_minors_yes">Yes</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="donor_minors" id="donor_minors_no" value="FALSE">
+                  <label class="form-check-label" for="donor_minors_no">No</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="donor_minors" id="donor_minors_na" value="na">
+                  <label class="form-check-label" for="donor_minors_na">N/A</label>
+              </div>
+              <small class="form-text">Indicate whether the samples were obtained from individuals below 18 years old.</small>
+            </div>        
           <div class="form-group mb-3">
             <label for="donor_inclusion_criteria"><b>Inclusion criteria:</b></label>
             <textarea class="form-control" id="donor_inclusion_criteria" rows="3"
@@ -726,22 +725,22 @@
             </div>
           </div>
           <div class="form-group mb-3">
-            <label for="sample_access_fee"><b>Sample access in exchange for a fee:</b></label>
+            <label><b>Sample access in exchange for a fee:</b></label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="sample_access_fee" id="yes" value="yes">
-              <label class="form-check-label" for="yes">Yes</label>
+                <input class="form-check-input" type="radio" name="sample_access_fee" id="sample_access_fee_yes" value="yes">
+                <label class="form-check-label" for="sample_access_fee_yes">Yes</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="sample_access_fee" id="no" value="no">
-              <label class="form-check-label" for="no">No</label>
+                <input class="form-check-input" type="radio" name="sample_access_fee" id="sample_access_fee_no" value="no">
+                <label class="form-check-label" for="sample_access_fee_no">No</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="sample_access_fee" id="na" value="na">
-              <label class="form-check-label" for="na">N/A</label>
+                <input class="form-check-input" type="radio" name="sample_access_fee" id="sample_access_fee_na" value="na">
+                <label class="form-check-label" for="sample_access_fee_na">N/A</label>
             </div>
-            <small class="form-text">Denotes whether access to samples may be obtained on fee-based
-              basis.</small>
-          </div>
+            <small class="form-text">Denotes whether access to samples may be obtained on a fee-based basis.</small>
+        </div>
+        
           <div class="form-group mb-3">
             <label for="sample_access_joint_project"><b>Samples access on the basis of a joint project:</b></label>
             <div class="form-check">
@@ -777,13 +776,13 @@
           <div class="row my-3">
             <div class="form-group col-md-6">
               <label for="head_firstname"><b>First name of the collection head:</b></label>
-              <input type="text" class="form-control" name="head_firstname">
+              <input type="text" class="form-control" name="head_firstname" id="head_firstname">
               <small class="form-text">First name of a person in charge of the collection, typically
                 PI.</small>
             </div>
             <div class="form-group  col-md-6">
               <label for="head_lastname"><b>Last name of the collection head:</b></label>
-              <input type="text" class="form-control" name="head_lastname">
+              <input type="text" class="form-control" name="head_lastname" id="head_lastname">
               <small class="form-text">Last name of a person in charge of the collection, typically
                 PI.</small>
             </div>
@@ -791,7 +790,7 @@
           <div class="row mb-3">
             <div class="form-group col-md-6">
               <label for="head_role"><b>Official role of the collection head:</b></label>
-              <input type="text" class="form-control" name="head_role">
+              <input type="text" class="form-control" name="head_role" id="head_role">
               <small class="form-text">Official role of the person in charge of the collection, typically
                 PI.</small>
             </div>
@@ -800,13 +799,13 @@
           <div class="row my-3">
             <div class="form-group col-md-6">
               <label for="contact_first_name"><b>First name of the contact person for enquiries:*</b></label>
-              <input type="text" class="form-control" name="contact_first_name" required>
+              <input type="text" class="form-control" name="contact_first_name" id="contact_first_name" required>
               <small class="form-text">First name of the person who handles enquiries and questions regarding
                 this collection.</small>
             </div>
             <div class="form-group col-md-6">
               <label for="contact_last_name"><b>Last name of the contact person for enquiries:*</b></label>
-              <input type="text" class="form-control" name="contact_last_name" required>
+              <input type="text" class="form-control" name="contact_last_name" id="contact_last_name" required>
               <small class="form-text">First name of the person who handles enquiries and questions regarding
                 this collection.</small>
             </div>
@@ -814,13 +813,13 @@
           <div class="row mb-3">
             <div class="form-group col-md-6">
               <label for="contact_email"><b>E-mail of the contact person for enquiries:*</b></label>
-              <input type="contact_email" class="form-control" name="contact_email" required>
+              <input type="contact_email" class="form-control" name="contact_email" id="contact_email" required>
               <small class="form-text">E-mail address of the person who handles enquiries and questions
                 regarding this collection.</small>
             </div>
             <div class="form-group col-md-6">
               <label for="contact_phone"><b>Phone number of the contact person for enquiries:</b></label>
-              <input type="text" class="form-control" name="contact_phone">
+              <input type="text" class="form-control" name="contact_phone" id="contact_phone">
               <small class="form-text">Phone number of the person who handles enquiries and questions
                 regarding this collection. To be filled out including international prefix (+99999999999 form with no
                 spaces).</small>
@@ -853,9 +852,13 @@
     </div>
   </div>
 
-  <div class="g-recaptcha mt-3" data-sitekey="6LfeIHUqAAAAAEZSs0q94yCkQkn_FbE1jF7Q0Lvs"></div>
+  <!-- <div class="g-recaptcha mt-3" data-sitekey="6LesV0gaAAAAAGFjazG7Hd_hN72cpeYm2woivBT3"></div>
   <input type="url" id="originUrl" name="originUrl" value="" hidden />
-  <input type='hidden' name='origin' value='add_collection'>
+  <input type='hidden' name='origin' value='add_collection'> -->
+  <div class="g-recaptcha mt-3" data-sitekey="6LfeIHUqAAAAAEZSs0q94yCkQkn_FbE1jF7Q0Lvs"></div>
+  <label for="g-recaptcha-response" style="display:none">Recaptcha</label>
+  <input type="url" id="originUrl" name="originUrl" value="" hidden aria-label="originUrl"/>
+  <input type='hidden' name='origin' value='add_biobank' hidden  aria-label="origin">
 
   <button type="submit" class="btn btn-secondary mt-3">Submit the form</button>
 </form>

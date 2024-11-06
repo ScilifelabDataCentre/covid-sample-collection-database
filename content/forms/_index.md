@@ -1,6 +1,7 @@
 ---
 title: Swedish COVID-19 Sample Collection Database
-aliases:
-    /menu/main/app-scd/
 ---
-Home page
+
+- [Add a new collection to the Swedish COVID-19](/forms/add_collection)
+- [Add a new biobank to the Swedish COVID-19](/forms/add_biobank)
+
