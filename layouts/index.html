@@ -107,7 +107,8 @@
               </tr>
             </thead>
             <tbody>
-              {{ range sort .Site.RegularPages ".Parent.Params.name" "asc" }}
+              {{ $collection_pages := where .Site.RegularPages "Section" "collections" }}
+              {{ range sort $collection_pages ".Parent.Params.name" "asc" }}
               <tr>
                 <td>{{ .Parent.Params.acronym }}</td>
                 <td><h6><a href="{{ .RelPermalink }}">{{ .Params.name }}</a></h6></td>
