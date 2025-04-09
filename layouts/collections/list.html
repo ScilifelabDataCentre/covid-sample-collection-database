@@ -1,10 +1,25 @@
 {{ define "main" }}
 
+{{ $isMainCollectionPage := strings.HasSuffix .RelPermalink "/collections/" }}
+
 <div class="row pl-0">
   <div class="col">
-    <a href="/">Home</a> / {{ .Params.name }}
+    <a href="/">Home</a> / 
+    {{ if $isMainCollectionPage }}
+      Collections
+    {{ else }}
+      <a href="/collections/">Collections</a> / {{ .Params.name }}
+    {{ end }}
   </div>
 </div>
+
+{{ if $isMainCollectionPage }}
+<ul class="mt-3">
+  {{ range .Pages }}
+    <li><h5><a href="{{ .RelPermalink }}" class="">{{ .Params.name }}</a></h5></li>
+  {{ end }}
+</ul>
+{{ else }}
 <div class="row">
   <div class="col">
     <div class="row mr-1">
@@ -104,7 +119,7 @@
                 <div class="row">
                   <div class="col"><i class="bi bi-globe mr-1"></i><a href="{{ .Params.website_url }}" target="_blank">Biobank homepage</a></div>
                 </div>{{ end }}
-                {{ if .Params.biobank_sverige }}<div class="mt-2"><b>Part of:</b><br><a href="https://biobanksverige.se/"><img src="https://covid19dataportal.se/img/logos/biobanksverige_logo.jpg" rel="Part of Biobank Sverige" style="height: 60px;"></a></div>{{ end }}
+                {{ if .Params.biobank_sverige }}<div class="mt-2"><b>Part of:</b><br><a href="https://biobanksverige.se/"><img src="/img/biobanksverige_logo.jpg" alt="Biobank sverige logo" rel="Part of Biobank Sverige" style="height: 60px;"></a></div>{{ end }}
               </div>
             </div>
           </div>
@@ -113,5 +128,6 @@
     </div>
   </div>
 </div>
+{{ end }}
 
 {{ end }}
