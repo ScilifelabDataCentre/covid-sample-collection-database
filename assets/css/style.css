@@ -89,13 +89,18 @@ a.nav-link:hover {
 
 /* Badges styling */
 
+.badge-grey {
+  background-color: #55585a;
+  color: white;
+}
+
 .badge-blue {
   background-color: #295986;
   color: white;
 }
 
 .badge-teal {
-  background-color: #37AE94;
+  background-color: #2A8470;
   color: white;
 }
 

@@ -2,9 +2,11 @@
 
 <div class="row pl-0">
   <div class="col">
-    <a href="/">Home</a> / Material / {{ .Title }}
+    <a href="/">Home</a> / Materials {{if ne .Title "Materials" }}/ {{ .Title }} {{ end }}
   </div>
 </div>
+
+{{if ne .Title "Materials" }}
 <div class="row">
   <div class="col">
     <div class="row mr-1">
@@ -93,5 +95,16 @@
     </div>
   </div>
 </div>
+{{ else }}
+<h1>Available materials</h1>
+<ul>
+  {{ range .Site.Taxonomies.materials }}
+    <li>
+      <span class="m-1 badge badge-blue taxonomy-term"><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></span>
+    </li>
+  {{ end }}
+</ul>
+
+{{ end }}
 
 {{ end }}
