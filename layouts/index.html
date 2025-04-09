@@ -10,8 +10,8 @@
         <div data-toggle="collapse" data-target="#collapseName" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseName" id="headingName"><span aria-hidden="true" class="bi bi-caret-right-fill mr-2"></span><span aria-hidden="true" class="bi bi-caret-down-fill mr-2"></span> Name </div>
         <div id="collapseName" class="collapse" aria-labelledby="headingName">
         <div class="card-body">
-          <fieldset><input type="text" class="form-control form-control-sm" placeholder="" aria-controls="" id="nameField"></fieldset>
-            <small class="form-text text-muted">Start typing to filter by collection name or biobank name</small>
+          <input type="text" class="form-control form-control-sm" placeholder="" aria-label="Search text" id="nameField">
+          <small class="form-text text-muted">Start typing to filter by collection name or biobank name</small>
         </div>
       </div>
     </div>
@@ -20,8 +20,14 @@
         <div data-toggle="collapse" data-target="#collapseDiagnoses" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseDiagnoses" id="headingDiagnoses"><span aria-hidden="true" class="bi bi-caret-right-fill mr-2"></span><span aria-hidden="true" class="bi bi-caret-down-fill mr-2"></span> Diagnoses </div>
         <div id="collapseDiagnoses" class="collapse" aria-labelledby="headingDiagnoses">
         <div class="card-body">
-            <div class="custom-control"><input type="checkbox" name="diagnoses" class="form-check-input" value="Laboratory-confirmed COVID-19 diagnosis; U07.1">Laboratory-confirmed COVID-19 diagnosis; U07.1</div>
-            <div class="custom-control"><input type="checkbox" name="diagnoses" class="form-check-input" value="Suspect or probable COVID-19 diagnosis; U07.2">Suspect or probable COVID-19 diagnosis; U07.2</div>
+            <div class="custom-control">
+              <input type="checkbox" id="U07.1" name="diagnoses" class="form-check-input" value="Laboratory-confirmed COVID-19 diagnosis; U07.1">
+              <label for="U07.1">Laboratory-confirmed COVID-19 diagnosis; U07.1</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" id="U07.2" name="diagnoses" class="form-check-input" value="Suspect or probable COVID-19 diagnosis; U07.2">
+              <label for="U07.2">Suspect or probable COVID-19 diagnosis; U07.2</label>
+            </div>
         </div>
       </div>
     </div>
@@ -30,28 +36,94 @@
           <div data-toggle="collapse" data-target="#collapseMaterials" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseMaterials" id="headingMaterials"><span aria-hidden="true" class="bi bi-caret-right-fill mr-2"></span><span aria-hidden="true" class="bi bi-caret-down-fill mr-2"></span> Materials </div>
           <div id="collapseMaterials" class="collapse" aria-labelledby="headingMaterials">
           <div class="card-body">
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Buffy Coat">Buffy Coat</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="cDNA / mRNA">cDNA / mRNA</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Cell lines">Cell lines</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Cerebrospinal fluid">Cerebrospinal fluid</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="DNA">DNA</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Feces">Feces</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="microRNA">microRNA</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Nasal swab">Nasal swab</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Other">Other</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Pathogen">Pathogen</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="PBMC">PBMC</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Peripheral blood cells">Peripheral blood cells</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Plasma">Plasma</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="RNA">RNA</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Saliva">Saliva</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Serum">Serum</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Throat swab">Throat swab</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Tissue (frozen)">Tissue (frozen)</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Tissue (paraffin preserved)">Tissue (paraffin preserved)</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Tissue (stained sections/slides)">Tissue (stained sections/slides)</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Urine">Urine</div>
-              <div class="custom-control"><input type="checkbox" name="materials" class="form-check-input" value="Whole Blood">Whole Blood</div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="Buffy Coat" id="buffy-coat">
+              <label for="buffy-coat">Buffy Coat</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="cDNA / mRNA" id="cdna">
+              <label for="cdna">cDNA / mRNA</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="Cell lines" id="cell-lines">
+              <label for="cell-lines">Cell lines</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="Cerebrospinal fluid" id="cerebro">
+              <label for="cerebro">Cerebrospinal fluid</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="DNA" id="dna">
+              <label for="dna">DNA</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="Feces" id="feces">
+              <label for="feces">Feces</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="microRNA" id="micro">
+              <label for="micro">microRNA</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="Nasal swab" id="nasal">
+              <label for="nasal">Nasal swab</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="Other" id="other">
+              <label for="other">Other</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="Pathogen" id="pathogen">
+              <label for="pathogen">Pathogen</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="PBMC" id="pbmc">
+              <label for="pbmc">PBMC</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="Peripheral blood cells" id="peropheral">
+              <label for="peropheral">Peripheral blood cells</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="Plasma" id="plasma">
+              <label for="plasma">Plasma</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="RNA" id="rna">
+              <label for="rna">RNA</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="Saliva" id="saliva">
+              <label for="saliva">Saliva</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="Serum" id="serum">
+              <label for="serum">Serum</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="Throat swab" id="throat">
+              <label for="throat">Throat swab</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="Tissue (frozen)" id="tissue-frozen">
+              <label for="tissue-frozen">Tissue (frozen)</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="Tissue (paraffin preserved)" id="tissue-paraffin">
+              <label for="tissue-paraffin">Tissue (paraffin preserved)</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="Tissue (stained sections/slides)" id="tissue-stain">
+              <label for="tissue-stain">Tissue (stained sections/slides)</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="Urine" id="urine">
+              <label for="urine">Urine</label>
+            </div>
+            <div class="custom-control">
+              <input type="checkbox" name="materials" class="form-check-input" value="Whole Blood" id="whole-blood">
+              <label for="whole-blood">Whole Blood</label>
+            </div>
           </div>
         </div>
       </div>
@@ -60,9 +132,18 @@
           <div data-toggle="collapse" data-target="#collapseCollectionTypes" class="card-header collapsed" role="button" tabindex="0" aria-expanded="false" aria-controls="collapseCollectionTypes" id="headingCollectionTypes"><span aria-hidden="true" class="bi bi-caret-right-fill mr-2"></span><span aria-hidden="true" class="bi bi-caret-down-fill mr-2"></span> Collection types </div>
           <div id="collapseCollectionTypes" class="collapse" aria-labelledby="headingCollectionTypes">
           <div class="card-body">
-              <div class="custom-control"><input type="checkbox" name="collectiontypes" class="form-check-input" value="Healthcare sample collection">Healthcare sample collection</div>
-              <div class="custom-control"><input type="checkbox" name="collectiontypes" class="form-check-input" value="National sample collection">National sample collection</div>
-              <div class="custom-control"><input type="checkbox" name="collectiontypes" class="form-check-input" value="Research sample collection">Research sample collection</div>
+              <div class="custom-control">
+                <input type="checkbox" name="collectiontypes" class="form-check-input" value="Healthcare sample collection" id="healthcare-sample">
+                <label for="healthcare-sample">Healthcare sample collection</label>
+              </div>
+              <div class="custom-control">
+                <input type="checkbox" name="collectiontypes" class="form-check-input" value="National sample collection" id="national-sample">
+                <label for="national-sample">National sample collection</label>
+              </div>
+              <div class="custom-control">
+                <input type="checkbox" name="collectiontypes" class="form-check-input" value="Research sample collection" id="research-sample">
+                <label for="research-sample">Research sample collection</label>
+              </div>
           </div>
         </div>
       </div>
@@ -112,7 +193,7 @@
               <tr>
                 <td>{{ .Parent.Params.acronym }}</td>
                 <td><h6><a href="{{ .RelPermalink }}">{{ .Params.name }}</a></h6></td>
-                <td><span class="m-1 badge badge-secondary">{{ .Params.collection_category }}</span></td>
+                <td><span class="m-1 badge badge-grey">{{ .Params.collection_category }}</span></td>
                 <td><span class="m-1 badge badge-teal">{{ if eq .Params.order_of_magnitude 0 }}
                               &#60;10
                               {{ else if eq .Params.order_of_magnitude 1 }}
